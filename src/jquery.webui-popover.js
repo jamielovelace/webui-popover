@@ -938,6 +938,7 @@
                 var elRect = this.$element[0].getBoundingClientRect();
                 var container = this.options.container;
                 var cssPos = container.css('position');
+                var cssParentPos = container.parent().css('position');
 
                 if (container.is(document.body) || cssPos === 'static') {
                     return $.extend({}, this.$element.offset(), {
@@ -945,7 +946,8 @@
                         height: this.$element[0].offsetHeight || elRect.height
                     });
                     // Else fixed container need recalculate the  position
-                } else if (cssPos === 'fixed' || cssPos === 'absolute') {
+                } else if (cssPos === 'fixed' || cssPos === 'absolute' ||
+                    cssParentPos === 'fixed' || cssParentPos === 'absolute') {
                     var containerRect = container[0].getBoundingClientRect();
                     return {
                         top: elRect.top - containerRect.top + container.scrollTop(),
