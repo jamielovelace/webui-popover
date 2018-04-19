@@ -1,5 +1,5 @@
 /*
- *  webui popover plugin  - v1.2.17
+ *  webui popover plugin  - v1.2.18
  *  A lightWeight popover plugin with jquery ,enchance the  popover plugin of bootstrap with some awesome new features. It works well with bootstrap ,but bootstrap is not necessary!
  *  https://github.com/sandywalker/webui-popover
  *
@@ -369,7 +369,7 @@
             },
             displayContent: function() {
                 var
-                //element postion
+                    //element postion
                     elementPos = this.getElementPosition(),
                     //target postion
                     $target = this.getTarget().removeClass().addClass(pluginClass).addClass(this._customTargetClass),
@@ -953,7 +953,7 @@
                         height: this.$element[0].offsetHeight || elRect.height
                     });
                     // Else fixed container need recalculate the  position
-                } else if (cssPos === 'fixed') {
+                } else if (cssPos === 'fixed' || cssPos === 'absolute') {
                     var containerRect = container[0].getBoundingClientRect();
                     return {
                         top: elRect.top - containerRect.top + container.scrollTop(),

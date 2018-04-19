@@ -361,7 +361,7 @@
             },
             displayContent: function() {
                 var
-                //element postion
+                    //element postion
                     elementPos = this.getElementPosition(),
                     //target postion
                     $target = this.getTarget().removeClass().addClass(pluginClass).addClass(this._customTargetClass),
